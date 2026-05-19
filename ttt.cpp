@@ -23,10 +23,23 @@ int main() {
     if (i % 2) {
       // Asks playerX to choose a number for their move
       playerMove(board, playerX);
+        if (checkWin(board, playerX)) {
+        std::cout << "Player x won!";
+        return 0;
+      }
     }
     else {
       // Asks playerO to choose a number for their move
       playerMove(board, playerO);
+        if (checkWin(board, playerO)) {
+        std::cout << "Player o won!";
+        return 0;
+      }
     }
   }
+
+// After the loop is over and no winner has been found, the game is a draw.
+std::cout << "It's a draw!\n";
+
+return 0;
 }
